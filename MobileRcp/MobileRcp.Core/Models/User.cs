@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MobileRcp.CoreTests
+namespace MobileRcp.Core.Models
 {
-    public class Class1
+    public class User
     {
+        public int Id { get; set; }
+        public string Username { get; set; }
     }
 }
