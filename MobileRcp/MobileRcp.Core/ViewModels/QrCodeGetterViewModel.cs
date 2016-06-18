@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using MobileRcp.Core.Definitions.Factories;
+using MobileRcp.Core.Models;
 
 namespace MobileRcp.Core.ViewModels
 {
@@ -38,7 +39,7 @@ namespace MobileRcp.Core.ViewModels
             {
                 _coreFactory.
                     GetCoreNavigationService().
-                    GoToErrorScreen(e.Message, () => _coreFactory.GetCoreNavigationService().GoToQrCodeGetter());
+                    GoToErrorScreen(new ErrorMessageModel(e.Message, () => _coreFactory.GetCoreNavigationService().GoToQrCodeGetter()));
             }
             
         }

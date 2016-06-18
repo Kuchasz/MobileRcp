@@ -70,7 +70,7 @@ namespace MobileRcp.CoreTests.ViewModels
         public void GoToErrorScreenIfUserAuthorizationFailed()
         {
             var errorMessage = "Auth error";
-            var receivedErrorMessage = string.Empty;
+            var receivedErrorMessage = new ErrorMessageModel();
 
             CoreFactory.GetAuthorizationService()
                 .AuthorizeUser(string.Empty)
@@ -78,12 +78,12 @@ namespace MobileRcp.CoreTests.ViewModels
 
             CoreFactory.
                 GetCoreNavigationService().
-                GoToErrorScreen(Arg.Do<string>(n => receivedErrorMessage = n), Arg.Any<Action>());
+                GoToErrorScreen(Arg.Do<ErrorMessageModel>(n => receivedErrorMessage = n));
 
             var viewModel = new QrCodeGetterViewModel(CoreFactory);
             viewModel.GetQrCodeCommand.Execute(string.Empty);
 
-            Assert.AreEqual(errorMessage, receivedErrorMessage);
+            Assert.AreEqual(errorMessage, receivedErrorMessage.ErrorMessage);
         }
     }
 }

@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ErrorScreenViewModelTests.cs" />
     <Compile Include="ViewModels\QrCodeGetterViewModelTests.cs" />
     <Compile Include="ViewModels\SelectAuthorizationTypeViewModelTests.cs" />
   </ItemGroup>

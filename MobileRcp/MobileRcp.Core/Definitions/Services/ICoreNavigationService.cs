@@ -10,7 +10,7 @@ namespace MobileRcp.Core.Definitions.Services
     public interface ICoreNavigationService
     {
         void GoToQrCodeGetter();
-        void GoToErrorScreen(string errorMessage, Action postNavigationAction);
+        void GoToErrorScreen(ErrorMessageModel errorMessage);
         void GoToAuthorizationTypeSelect(User user);
         TParameter GetNavigationParameter<TParameter>();
     }
