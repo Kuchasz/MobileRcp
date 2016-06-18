@@ -38,13 +38,16 @@
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseTypes\ViewModelWithParameter.cs" />
     <Compile Include="Definitions\Factories\ICoreFactory.cs" />
     <Compile Include="Definitions\Services\IAuthorizationService.cs" />
     <Compile Include="Definitions\Services\ICoreNavigationService.cs" />
     <Compile Include="Exceptions\AuthorizationException.cs" />
+    <Compile Include="Models\EntryType.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\QrCodeGetterViewModel.cs" />
+    <Compile Include="ViewModels\SelectAuthorizationTypeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">

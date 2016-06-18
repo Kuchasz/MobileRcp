@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace MobileRcp.Core.Models
 {
-    public class User
+    public enum EntryType
     {
-        public int Id { get; set; }
-        public string Username { get; set; }
-        public string ImageUrl { get; set; }
+        NormalIn,
+        NormalOut,
+        BusinessIn,
+        BusinessOut
     }
 }
