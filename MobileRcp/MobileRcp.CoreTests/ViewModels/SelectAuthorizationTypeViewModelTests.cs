@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MobileRcp.Core.Definitions.Factories;
+using MobileRcp.Core.Exceptions;
 using MobileRcp.Core.Models;
 using MobileRcp.Core.ViewModels;
 using NSubstitute;
+using NSubstitute.ExceptionExtensions;
 using NUnit.Framework;
 
 namespace MobileRcp.CoreTests.ViewModels
@@ -25,7 +27,10 @@ namespace MobileRcp.CoreTests.ViewModels
         {
             var user = new User() { Id = 123, Username = "abc", ImageUrl = "img"};
 
-            CoreFactory.GetCoreNavigationService().GetNavigationParameter<User>().Returns(user);
+            CoreFactory.
+                GetCoreNavigationService().
+                GetNavigationParameter<User>().
+                Returns(user);
 
             var viewModel = new SelectAuthorizationTypeViewModel(CoreFactory);
 
@@ -44,6 +49,36 @@ namespace MobileRcp.CoreTests.ViewModels
             viewModel.CancelCommand.Execute(null);
 
             CoreFactory.GetCoreNavigationService().Received().GoToQrCodeGetter();
+        }
+
+        [Test]
+        public void ShowErrorScreenWhenSelectTypeFailed()
+        {
+            var errorText = "testError";
+            var receiveErrorText = string.Empty;
+            var user = new User() { Id = 123, Username = "abc", ImageUrl = "img" };
+
+            CoreFactory.
+                GetCoreNavigationService().
+                GetNavigationParameter<User>().
+                Returns(user);
+
+            CoreFactory.
+                GetAuthorizationService().
+                Throws(new AuthorizationException(errorText));
+
+            CoreFactory.
+                GetCoreNavigationService().
+                GoToErrorScreen(Arg.Do<ErrorMessageModel>(n => receiveErrorText = n.ErrorMessage));
+
+            var viewModel = new SelectAuthorizationTypeViewModel(CoreFactory);
+
+
+            viewModel.
+                SetEntryAsNormalInCommand.
+                Execute(null);
+
+            Assert.AreEqual(errorText, receiveErrorText);            
         }
 
         [Test]
@@ -76,9 +111,16 @@ namespace MobileRcp.CoreTests.ViewModels
             var user = new User() { Id = 123, Username = "abc" };
             CoreFactory.GetCoreNavigationService().GetNavigationParameter<User>().Returns(user);
             var receivedUserIdent = 0;
+            AuthorizedModel receivedAuthorizedModel = null;
             EntryType receivedEntry = EntryType.BusinessIn;
 
-            CoreFactory.GetAuthorizationService().SetUserEntrance(Arg.Do<int>(n => receivedUserIdent = n), Arg.Do<EntryType>(n => receivedEntry = n));
+            CoreFactory.
+                GetAuthorizationService().
+                SetUserEntrance(Arg.Do<int>(n => receivedUserIdent = n), Arg.Do<EntryType>(n => receivedEntry = n));
+
+            CoreFactory.
+                GetCoreNavigationService().
+                GoToAuthorizationCompleted(Arg.Do<AuthorizedModel>(n => receivedAuthorizedModel = n));
 
             var viewModel = new SelectAuthorizationTypeViewModel(CoreFactory);
 
@@ -86,6 +128,8 @@ namespace MobileRcp.CoreTests.ViewModels
 
             Assert.AreEqual(user.Id, receivedUserIdent);
             Assert.AreEqual(expectedEntry, receivedEntry);
+            Assert.AreEqual(receivedAuthorizedModel.EntryType, expectedEntry);
+            Assert.AreEqual(receivedAuthorizedModel.UserIdent, user.Id);            
         }
 
     }

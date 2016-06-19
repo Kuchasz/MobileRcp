@@ -43,6 +43,7 @@
     <Compile Include="Definitions\Services\IAuthorizationService.cs" />
     <Compile Include="Definitions\Services\ICoreNavigationService.cs" />
     <Compile Include="Exceptions\AuthorizationException.cs" />
+    <Compile Include="Models\AuthorizedModel.cs" />
     <Compile Include="Models\EntryType.cs" />
     <Compile Include="Models\ErrorMessageModel.cs" />
     <Compile Include="Models\User.cs" />

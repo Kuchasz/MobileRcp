@@ -7,6 +7,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using MobileRcp.Core.BaseTypes;
 using MobileRcp.Core.Definitions.Factories;
+using MobileRcp.Core.Exceptions;
 using MobileRcp.Core.Models;
 
 namespace MobileRcp.Core.ViewModels
@@ -14,6 +15,7 @@ namespace MobileRcp.Core.ViewModels
     public class SelectAuthorizationTypeViewModel : ViewModelWithParameter<User>
     {
         private readonly ICoreFactory _coreFactory;
+        private DateTime _userEntryTime;
 
         private string _username;
         public string Username
@@ -52,7 +54,27 @@ namespace MobileRcp.Core.ViewModels
 
         private void SetUserEntryType(EntryType entryType)
         {
-            _coreFactory.GetAuthorizationService().SetUserEntrance(ViewModelParameter.Id, entryType);
+            try
+            {
+                _coreFactory.
+                    GetAuthorizationService().
+                    SetUserEntrance(ViewModelParameter.Id, entryType);
+
+                _coreFactory.
+                    GetCoreNavigationService().
+                    GoToAuthorizationCompleted(new AuthorizedModel()
+                    {
+                        EntryType = entryType,
+                        Date = _userEntryTime,
+                        UserIdent = ViewModelParameter.Id
+                    });
+            }
+            catch (AuthorizationException exception)
+            {                
+                _coreFactory.
+                    GetCoreNavigationService().
+                    GoToErrorScreen(new ErrorMessageModel(exception.Message, _coreFactory.GetCoreNavigationService().GoToQrCodeGetter));
+            }            
         }
 
         private void CancelSelection()
@@ -71,8 +93,9 @@ namespace MobileRcp.Core.ViewModels
 
         private void SetParams()
         {
+            _userEntryTime = DateTime.Now;
             Username = ViewModelParameter.Username;
-            EntryTime = DateTime.Now.ToString("dd-MM-yyyy HH:mm");
+            EntryTime = _userEntryTime.ToString("dd-MM-yyyy HH:mm");
             ImageUrl = ViewModelParameter.ImageUrl;
         }
     }
