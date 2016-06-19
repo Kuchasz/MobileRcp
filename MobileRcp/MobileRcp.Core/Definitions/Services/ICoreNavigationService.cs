@@ -12,6 +12,10 @@ namespace MobileRcp.Core.Definitions.Services
         void GoToQrCodeGetter();
         void GoToErrorScreen(ErrorMessageModel errorMessage);
         void GoToAuthorizationTypeSelect(User user);
+        void GoToAuthorizationCompleted(AuthorizedModel authorizedModel);
+        void GoToWorktimeStats(AuthorizedModel authorizedModel);
+        void GoToLeaveStats(AuthorizedModel authorizedModel);
+
         TParameter GetNavigationParameter<TParameter>();
     }
 }
