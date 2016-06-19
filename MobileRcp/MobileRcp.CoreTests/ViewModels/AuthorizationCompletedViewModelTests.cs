@@ -23,8 +23,12 @@ namespace MobileRcp.CoreTests.ViewModels
             AuthorizedModel = new AuthorizedModel()
             {
                 EntryType = EntryType.NormalIn,
-                UserIdent = 1,
-                Date = DateTime.Now
+                Date = DateTime.Now,
+                AuthorizationData = new UserAuthorizationData()
+                {
+                    UserIdent = 1,
+                    UserAuthorizationToken = "token"
+                }
             };
 
             CoreFactory.

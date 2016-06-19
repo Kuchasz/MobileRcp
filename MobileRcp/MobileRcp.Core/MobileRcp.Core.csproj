@@ -35,20 +35,25 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseTypes\ViewModelWithParameter.cs" />
     <Compile Include="Definitions\Factories\ICoreFactory.cs" />
+    <Compile Include="Definitions\Factories\IViewModelsFactory.cs" />
     <Compile Include="Definitions\Services\IAuthorizationService.cs" />
     <Compile Include="Definitions\Services\ICoreNavigationService.cs" />
     <Compile Include="Definitions\Services\IUserStatsService.cs" />
     <Compile Include="Exceptions\AuthorizationException.cs" />
+    <Compile Include="Factories\CoreFactory.cs" />
+    <Compile Include="Factories\ViewModelsFactory.cs" />
     <Compile Include="Models\AuthorizedModel.cs" />
     <Compile Include="Models\EntryType.cs" />
     <Compile Include="Models\ErrorMessageModel.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserAuthorizationData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DummyAuthorizationService.cs" />
+    <Compile Include="Services\DummyUserStatsService.cs" />
     <Compile Include="ViewModels\AuthorizationCompletedViewModel.cs" />
     <Compile Include="ViewModels\ErrorScreenViewModel.cs" />
     <Compile Include="ViewModels\LeaveStatsViewModel.cs" />

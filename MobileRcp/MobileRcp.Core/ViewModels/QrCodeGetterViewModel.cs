@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using MobileRcp.Core.Definitions.Factories;
+using MobileRcp.Core.Exceptions;
 using MobileRcp.Core.Models;
 
 namespace MobileRcp.Core.ViewModels
@@ -35,11 +36,11 @@ namespace MobileRcp.Core.ViewModels
                     GetCoreNavigationService().
                     GoToAuthorizationTypeSelect(user);
             }
-            catch (Exception e)
+            catch (AuthorizationException exception)
             {
                 _coreFactory.
                     GetCoreNavigationService().
-                    GoToErrorScreen(new ErrorMessageModel(e.Message, () => _coreFactory.GetCoreNavigationService().GoToQrCodeGetter()));
+                    GoToErrorScreen(new ErrorMessageModel(exception.Message, () => _coreFactory.GetCoreNavigationService().GoToQrCodeGetter()));
             }
             
         }
