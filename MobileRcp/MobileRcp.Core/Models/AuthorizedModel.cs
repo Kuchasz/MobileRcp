@@ -10,6 +10,6 @@ namespace MobileRcp.Core.Models
     {
         public EntryType EntryType { get; set; }
         public DateTime Date { get; set; }
-        public int UserIdent { get; set; }
+        public UserAuthorizationData AuthorizationData { get; set; }
     }
 }

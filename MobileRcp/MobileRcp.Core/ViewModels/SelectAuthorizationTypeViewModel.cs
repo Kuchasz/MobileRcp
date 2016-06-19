@@ -58,16 +58,11 @@ namespace MobileRcp.Core.ViewModels
             {
                 _coreFactory.
                     GetAuthorizationService().
-                    SetUserEntrance(ViewModelParameter.Id, entryType);
+                    SetUserEntrance(ViewModelParameter.AuthorizationData, entryType);
 
                 _coreFactory.
                     GetCoreNavigationService().
-                    GoToAuthorizationCompleted(new AuthorizedModel()
-                    {
-                        EntryType = entryType,
-                        Date = _userEntryTime,
-                        UserIdent = ViewModelParameter.Id
-                    });
+                    GoToAuthorizationCompleted(PrepareAuthorizedModel(entryType));
             }
             catch (AuthorizationException exception)
             {                
@@ -75,6 +70,16 @@ namespace MobileRcp.Core.ViewModels
                     GetCoreNavigationService().
                     GoToErrorScreen(new ErrorMessageModel(exception.Message, _coreFactory.GetCoreNavigationService().GoToQrCodeGetter));
             }            
+        }
+
+        private AuthorizedModel PrepareAuthorizedModel(EntryType entryType)
+        {
+            return new AuthorizedModel()
+            {
+                EntryType = entryType,
+                Date = _userEntryTime,
+                AuthorizationData = ViewModelParameter.AuthorizationData
+            };
         }
 
         private void CancelSelection()

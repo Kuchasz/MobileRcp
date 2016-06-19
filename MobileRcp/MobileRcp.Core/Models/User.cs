@@ -8,8 +8,8 @@ namespace MobileRcp.Core.Models
 {
     public class User
     {
-        public int Id { get; set; }
+        public UserAuthorizationData AuthorizationData { get; set; }        
         public string Username { get; set; }
-        public string ImageUrl { get; set; }
+        public string ImageUrl { get; set; }        
     }
 }

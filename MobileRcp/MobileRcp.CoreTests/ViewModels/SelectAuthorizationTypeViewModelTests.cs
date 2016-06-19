@@ -25,7 +25,16 @@ namespace MobileRcp.CoreTests.ViewModels
         [Test]
         public void GetUserAuthorizationPropertiesTest()
         {
-            var user = new User() { Id = 123, Username = "abc", ImageUrl = "img"};
+            var user = new User()
+            {
+                Username = "abc",
+                ImageUrl = "img",
+                AuthorizationData = new UserAuthorizationData()
+                {
+                    UserIdent = 1,
+                    UserAuthorizationToken = "testToken"
+                }
+            };
 
             CoreFactory.
                 GetCoreNavigationService().
@@ -56,7 +65,7 @@ namespace MobileRcp.CoreTests.ViewModels
         {
             var errorText = "testError";
             var receiveErrorText = string.Empty;
-            var user = new User() { Id = 123, Username = "abc", ImageUrl = "img" };
+            var user = new User() { Username = "abc", ImageUrl = "img", AuthorizationData = new UserAuthorizationData()};
 
             CoreFactory.
                 GetCoreNavigationService().
@@ -108,15 +117,15 @@ namespace MobileRcp.CoreTests.ViewModels
 
         private void PassValidEntryTypeAndUserIdentTest(EntryType expectedEntry, Action<SelectAuthorizationTypeViewModel> viewModelSetEntryCommandExecute)
         {
-            var user = new User() { Id = 123, Username = "abc" };
+            var user = new User() { Username = "abc", AuthorizationData = new UserAuthorizationData() { UserIdent = 1, UserAuthorizationToken = "testToken"} };
             CoreFactory.GetCoreNavigationService().GetNavigationParameter<User>().Returns(user);
-            var receivedUserIdent = 0;
+            UserAuthorizationData receivedUserIdent = null;
             AuthorizedModel receivedAuthorizedModel = null;
             EntryType receivedEntry = EntryType.BusinessIn;
 
             CoreFactory.
                 GetAuthorizationService().
-                SetUserEntrance(Arg.Do<int>(n => receivedUserIdent = n), Arg.Do<EntryType>(n => receivedEntry = n));
+                SetUserEntrance(Arg.Do<UserAuthorizationData>(n => receivedUserIdent = n), Arg.Do<EntryType>(n => receivedEntry = n));
 
             CoreFactory.
                 GetCoreNavigationService().
@@ -126,10 +135,10 @@ namespace MobileRcp.CoreTests.ViewModels
 
             viewModelSetEntryCommandExecute.Invoke(viewModel);
 
-            Assert.AreEqual(user.Id, receivedUserIdent);
+            Assert.AreEqual(user.AuthorizationData.UserIdent, receivedUserIdent.UserIdent);
+            Assert.AreEqual(user.AuthorizationData.UserAuthorizationToken, receivedUserIdent.UserAuthorizationToken);
             Assert.AreEqual(expectedEntry, receivedEntry);
-            Assert.AreEqual(receivedAuthorizedModel.EntryType, expectedEntry);
-            Assert.AreEqual(receivedAuthorizedModel.UserIdent, user.Id);            
+            Assert.AreEqual(receivedAuthorizedModel.EntryType, expectedEntry);            
         }
 
     }
