@@ -10,20 +10,17 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using MobileRcp.Core.ViewModels;
+using MobileRcp.Droid.BaseTypes;
 using ZXing.Mobile;
 
 namespace MobileRcp.Droid.Activities
 {
-    [Activity(Label = "QrCodeGetterActivity")]
-    public class QrCodeGetterActivity : Activity
+    [Activity(Label = "QrCodeGetterActivity", MainLauncher = true)]
+    public class QrCodeGetterActivity : DroidActivity
     {
-        private QrCodeGetterViewModel _viewModel;
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            _viewModel = App.GetViewModelsFactory(Intent).GetQrCodeGetterViewModel();
 
             MobileBarcodeScanner.Initialize(Application);
 
@@ -33,11 +30,12 @@ namespace MobileRcp.Droid.Activities
         private async void GetCode()
         {
             var scanner = new MobileBarcodeScanner();
+
             var result = await scanner.Scan();
 
             if (result != null)
             {
-                _viewModel.GetQrCodeCommand.Execute(result.Text);                
+                Factory.GetQrCodeGetterViewModel().GetQrCodeCommand.Execute(result.Text);                
             }
         }
     }
