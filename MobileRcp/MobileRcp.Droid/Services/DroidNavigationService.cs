@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Android.Accounts;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -12,6 +12,7 @@ using Android.Widget;
 using GalaSoft.MvvmLight.Views;
 using MobileRcp.Core.Definitions.Services;
 using MobileRcp.Core.Models;
+using MobileRcp.Droid.Activities;
 
 namespace MobileRcp.Droid.Services
 {
@@ -20,9 +21,18 @@ namespace MobileRcp.Droid.Services
         private readonly NavigationService _navigationService;
         private Intent _intent;
 
+        private const string _authorizarionTypeSelectKey = "authorizarionTypeSelectKey";
+
         public DroidNavigationService()
         {
             _navigationService = new NavigationService();
+
+            ConfigureNavigationService();
+        }
+
+        private void ConfigureNavigationService()
+        {
+            _navigationService.Configure(_authorizarionTypeSelectKey, typeof(SelectAuthorizationTypeActivity));
         }
 
 
@@ -38,7 +48,7 @@ namespace MobileRcp.Droid.Services
 
         public void GoToAuthorizationTypeSelect(User user)
         {
-            throw new NotImplementedException();
+            _navigationService.NavigateTo(_authorizarionTypeSelectKey, user);
         }
 
         public void GoToAuthorizationCompleted(AuthorizedModel authorizedModel)

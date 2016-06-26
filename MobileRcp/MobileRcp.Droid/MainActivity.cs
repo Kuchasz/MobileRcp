@@ -10,7 +10,7 @@ using MobileRcp.Droid.BaseTypes;
 
 namespace MobileRcp.Droid
 {
-    [Activity(Label = "MobileRcp.Droid", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "MobileRcp.Droid", Icon = "@drawable/icon")]
     public class MainActivity : DroidActivity
     {
         int count = 1;
