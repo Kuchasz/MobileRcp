@@ -24,6 +24,7 @@ namespace MobileRcp.Droid.Services
         private const string AuthorizarionTypeSelectKey = "authorizarionTypeSelectKey";
         private const string ErrorScreenKey = "errorScreenKey";
         private const string QrCodeGetterKey = "qrCodeGetterKey";
+        private const string AuthorizationCompletedKey = "AuthorizationCompletedKey";
 
         public DroidNavigationService()
         {
@@ -37,6 +38,7 @@ namespace MobileRcp.Droid.Services
             _navigationService.Configure(AuthorizarionTypeSelectKey, typeof(SelectAuthorizationTypeActivity));
             _navigationService.Configure(ErrorScreenKey, typeof(ErrorScreenActivity));
             _navigationService.Configure(QrCodeGetterKey, typeof(QrCodeGetterActivity));
+            _navigationService.Configure(AuthorizationCompletedKey, typeof(AuthorizationCompletedActivity));
         }
 
 
@@ -57,7 +59,7 @@ namespace MobileRcp.Droid.Services
 
         public void GoToAuthorizationCompleted(AuthorizedModel authorizedModel)
         {
-            throw new NotImplementedException();
+            _navigationService.NavigateTo(AuthorizationCompletedKey, authorizedModel);
         }
 
         public void GoToWorktimeStats(AuthorizedModel authorizedModel)

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="10dp">
+    <TextView
+        android:text="Twoja rejestracja przebiegła pomyślnie!"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:gravity="center" />
+    <ImageView
+        android:src="@drawable/ok"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/imageView1"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp" />
+    <Button
+        android:text="CZAS PRACY"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/completedWorktime" />
+    <Button
+        android:text="KARTY URLOPOWE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/completedLeaves" />
+    <Button
+        android:text="ZAKOŃCZ REJESTRACJĘ"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/completedEnd" />
+</LinearLayout>
