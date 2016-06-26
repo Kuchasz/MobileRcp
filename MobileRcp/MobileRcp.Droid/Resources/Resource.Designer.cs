@@ -76,7 +76,10 @@ namespace MobileRcp.Droid
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int error = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int Icon = 2130837505;
 			
 			static Drawable()
 			{
@@ -91,35 +94,47 @@ namespace MobileRcp.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050001
-			public const int MyButton = 2131034113;
-			
-			// aapt resource value: 0x7f050008
-			public const int authTypeCancel = 2131034120;
-			
-			// aapt resource value: 0x7f050003
-			public const int authTypeImage = 2131034115;
-			
-			// aapt resource value: 0x7f050004
-			public const int authTypeNormalIn = 2131034116;
-			
 			// aapt resource value: 0x7f050005
-			public const int authTypeNormalOut = 2131034117;
+			public const int MyButton = 2131034117;
 			
-			// aapt resource value: 0x7f050002
-			public const int authTypeUsername = 2131034114;
-			
-			// aapt resource value: 0x7f050006
-			public const int authTypeWorkIn = 2131034118;
+			// aapt resource value: 0x7f05000c
+			public const int authTypeCancel = 2131034124;
 			
 			// aapt resource value: 0x7f050007
-			public const int authTypeWorkOut = 2131034119;
+			public const int authTypeImage = 2131034119;
+			
+			// aapt resource value: 0x7f050008
+			public const int authTypeNormalIn = 2131034120;
 			
 			// aapt resource value: 0x7f050009
-			public const int contentFrame = 2131034121;
+			public const int authTypeNormalOut = 2131034121;
+			
+			// aapt resource value: 0x7f050006
+			public const int authTypeUsername = 2131034118;
+			
+			// aapt resource value: 0x7f05000a
+			public const int authTypeWorkIn = 2131034122;
+			
+			// aapt resource value: 0x7f05000b
+			public const int authTypeWorkOut = 2131034123;
+			
+			// aapt resource value: 0x7f05000d
+			public const int contentFrame = 2131034125;
+			
+			// aapt resource value: 0x7f050004
+			public const int errorOk = 2131034116;
+			
+			// aapt resource value: 0x7f050002
+			public const int errorText = 2131034114;
+			
+			// aapt resource value: 0x7f050003
+			public const int imageView1 = 2131034115;
 			
 			// aapt resource value: 0x7f050000
 			public const int item_touch_helper_previous_elevation = 2131034112;
+			
+			// aapt resource value: 0x7f050001
+			public const int textView1 = 2131034113;
 			
 			static Id()
 			{
@@ -135,16 +150,19 @@ namespace MobileRcp.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int ErrorScreen = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int SelectAuthorizationType = 2130903041;
+			public const int Main = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int zxingscanneractivitylayout = 2130903042;
+			public const int SelectAuthorizationType = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int zxingscannerfragmentlayout = 2130903043;
+			public const int zxingscanneractivitylayout = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int zxingscannerfragmentlayout = 2130903044;
 			
 			static Layout()
 			{

@@ -21,7 +21,9 @@ namespace MobileRcp.Droid.Services
         private readonly NavigationService _navigationService;
         private Intent _intent;
 
-        private const string _authorizarionTypeSelectKey = "authorizarionTypeSelectKey";
+        private const string AuthorizarionTypeSelectKey = "authorizarionTypeSelectKey";
+        private const string ErrorScreenKey = "errorScreenKey";
+        private const string QrCodeGetterKey = "qrCodeGetterKey";
 
         public DroidNavigationService()
         {
@@ -32,23 +34,25 @@ namespace MobileRcp.Droid.Services
 
         private void ConfigureNavigationService()
         {
-            _navigationService.Configure(_authorizarionTypeSelectKey, typeof(SelectAuthorizationTypeActivity));
+            _navigationService.Configure(AuthorizarionTypeSelectKey, typeof(SelectAuthorizationTypeActivity));
+            _navigationService.Configure(ErrorScreenKey, typeof(ErrorScreenActivity));
+            _navigationService.Configure(QrCodeGetterKey, typeof(QrCodeGetterActivity));
         }
 
 
         public void GoToQrCodeGetter()
         {
-            throw new NotImplementedException();
+            _navigationService.NavigateTo(QrCodeGetterKey);
         }
 
         public void GoToErrorScreen(ErrorMessageModel errorMessage)
         {
-            throw new NotImplementedException();
+            _navigationService.NavigateTo(ErrorScreenKey, errorMessage);
         }
 
         public void GoToAuthorizationTypeSelect(User user)
         {
-            _navigationService.NavigateTo(_authorizarionTypeSelectKey, user);
+            _navigationService.NavigateTo(AuthorizarionTypeSelectKey, user);
         }
 
         public void GoToAuthorizationCompleted(AuthorizedModel authorizedModel)
