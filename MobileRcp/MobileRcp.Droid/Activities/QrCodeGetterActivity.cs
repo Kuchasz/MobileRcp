@@ -31,7 +31,6 @@ namespace MobileRcp.Droid.Activities
         {
             var scanner = new MobileBarcodeScanner();
 
-            var result = await scanner.Scan();
 
             if (result != null)
             {
