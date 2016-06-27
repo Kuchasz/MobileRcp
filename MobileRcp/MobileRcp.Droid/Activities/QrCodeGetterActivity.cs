@@ -31,6 +31,7 @@ namespace MobileRcp.Droid.Activities
         {
             var scanner = new MobileBarcodeScanner();
 
+            var result = await scanner.Scan(new MobileBarcodeScanningOptions() { UseFrontCameraIfAvailable = true });
 
             if (result != null)
             {
