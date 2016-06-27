@@ -15,7 +15,7 @@ using ZXing.Mobile;
 
 namespace MobileRcp.Droid.Activities
 {
-    [Activity(Label = "QrCodeGetterActivity", MainLauncher = true)]
+    [Activity(Label = "QrCodeGetterActivity")]
     public class QrCodeGetterActivity : DroidActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

@@ -13,6 +13,7 @@ namespace MobileRcp.Core.Factories
     {
         private readonly ICoreNavigationService _platformSpecificNavigation;
         private IAuthorizationService _authorizationService;
+        private IUserStatsService _userStatsService;
 
         public CoreFactory(ICoreNavigationService platformSpecificNavigation)
         {
@@ -22,6 +23,11 @@ namespace MobileRcp.Core.Factories
         public IAuthorizationService GetAuthorizationService()
         {
             return _authorizationService ?? (_authorizationService = new DummyAuthorizationService());
+        }
+
+        public IUserStatsService GetUserStatsService()
+        {
+            return _userStatsService ?? (_userStatsService = new DummyUserStatsService());
         }
 
         public ICoreNavigationService GetCoreNavigationService()

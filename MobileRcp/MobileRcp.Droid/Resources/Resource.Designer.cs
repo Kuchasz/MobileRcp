@@ -130,8 +130,8 @@ namespace MobileRcp.Droid
 			// aapt resource value: 0x7f050003
 			public const int completedWorktime = 2131034115;
 			
-			// aapt resource value: 0x7f050010
-			public const int contentFrame = 2131034128;
+			// aapt resource value: 0x7f050012
+			public const int contentFrame = 2131034130;
 			
 			// aapt resource value: 0x7f050007
 			public const int errorOk = 2131034119;
@@ -147,6 +147,12 @@ namespace MobileRcp.Droid
 			
 			// aapt resource value: 0x7f050001
 			public const int textView1 = 2131034113;
+			
+			// aapt resource value: 0x7f050010
+			public const int worktimePager = 2131034128;
+			
+			// aapt resource value: 0x7f050011
+			public const int worktimesList = 2131034129;
 			
 			static Id()
 			{
@@ -174,10 +180,16 @@ namespace MobileRcp.Droid
 			public const int SelectAuthorizationType = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int zxingscanneractivitylayout = 2130903044;
+			public const int WorktimeStats = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int zxingscannerfragmentlayout = 2130903045;
+			public const int WorktimeStatsMonth = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int zxingscanneractivitylayout = 2130903046;
+			
+			// aapt resource value: 0x7f030007
+			public const int zxingscannerfragmentlayout = 2130903047;
 			
 			static Layout()
 			{

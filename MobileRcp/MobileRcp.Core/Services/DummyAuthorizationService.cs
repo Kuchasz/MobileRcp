@@ -17,8 +17,8 @@ namespace MobileRcp.Core.Services
             {
                 return new User()
                 {
-                    Username = "Rafał",
-                    ImageUrl = "https://avatars0.githubusercontent.com/u/13023627?v=3&s=40",
+                    Username = "Władek",
+                    ImageUrl = "http://i1.kwejk.pl/k/users/thumbs/0643e1d087e8be7b04f2472564155e95.jpg",
                     AuthorizationData = new UserAuthorizationData()
                     {
                         UserIdent = 1,

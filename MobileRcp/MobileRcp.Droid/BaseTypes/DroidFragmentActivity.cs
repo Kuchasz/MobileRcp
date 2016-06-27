@@ -7,14 +7,14 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
-using GalaSoft.MvvmLight.Views;
 using MobileRcp.Core.Definitions.Factories;
 
 namespace MobileRcp.Droid.BaseTypes
 {
-    public abstract class DroidActivity : ActivityBase
+    public abstract class DroidFragmentActivity : FragmentActivity
     {
         public IViewModelsFactory Factory => App.GetViewModelsFactory(Intent);
     }

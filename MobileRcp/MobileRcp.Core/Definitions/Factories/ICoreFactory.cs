@@ -10,6 +10,7 @@ namespace MobileRcp.Core.Definitions.Factories
     public interface ICoreFactory
     {
         IAuthorizationService GetAuthorizationService();
+        IUserStatsService GetUserStatsService();
         ICoreNavigationService GetCoreNavigationService();
     }
 }

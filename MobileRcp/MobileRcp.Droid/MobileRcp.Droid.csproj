@@ -94,10 +94,12 @@
     <Compile Include="Activities\LeaveStatsActivity.cs" />
     <Compile Include="Activities\QrCodeGetterActivity.cs" />
     <Compile Include="Activities\SelectAuthorizationTypeActivity.cs" />
-    <Compile Include="Activities\WorktimeStatsActivity.cs" />
+    <Compile Include="Activities\WorktimeStats\WorktimeStatsActivity.cs" />
+    <Compile Include="Activities\WorktimeStats\WorktimeStatsMonthFragment.cs" />
+    <Compile Include="Activities\WorktimeStats\WorktimeStatsMonthFragmentAdapter.cs" />
     <Compile Include="App.cs" />
     <Compile Include="BaseTypes\DroidActivity.cs" />
-    <Compile Include="MainActivity.cs" />
+    <Compile Include="BaseTypes\DroidFragmentActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DroidNavigationService.cs" />
@@ -114,6 +116,12 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\AuthorizationCompleted.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\WorktimeStats.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\WorktimeStatsMonth.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
