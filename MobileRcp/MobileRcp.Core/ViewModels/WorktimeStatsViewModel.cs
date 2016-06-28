@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MobileRcp.Core.BaseTypes;
+using MobileRcp.Core.Definitions.Converters;
 using MobileRcp.Core.Definitions.Factories;
 using MobileRcp.Core.Definitions.Services;
 using MobileRcp.Core.Models;
@@ -28,8 +29,10 @@ namespace MobileRcp.Core.ViewModels
             }
         }
 
-        private ObservableCollection<UserWorktime> _worktimes;
-        public ObservableCollection<UserWorktime> Worktimes
+        private ObservableCollection<UserWorktimeToDisplay> _worktimes;
+        private IValueConverter<IEnumerable<UserWorktime>, IEnumerable<UserWorktimeToDisplay>> _worktimeConverter;
+
+        public ObservableCollection<UserWorktimeToDisplay> Worktimes
         {
             get { return _worktimes; }
             set { Set(() => Worktimes, ref _worktimes, value); }
@@ -39,12 +42,14 @@ namespace MobileRcp.Core.ViewModels
         {
             _coreFactory = coreFactory;
             _userStatsService = _coreFactory.GetUserStatsService();
+            _worktimeConverter = _coreFactory.GetConvertersFactory().GetWorktimeToDisplayConverter();
         }
 
         private void LoadWorktimes()
         {
             var worktimes = _userStatsService.GetUserWorktimes(1, Date, Date.AddDays(DateTime.DaysInMonth(Date.Year, Date.Month)));
-            Worktimes = new ObservableCollection<UserWorktime>(worktimes); 
+
+            Worktimes = new ObservableCollection<UserWorktimeToDisplay>(_worktimeConverter.Convert(worktimes)); 
         }
     }
 }

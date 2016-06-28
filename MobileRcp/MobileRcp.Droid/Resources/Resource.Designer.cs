@@ -130,8 +130,8 @@ namespace MobileRcp.Droid
 			// aapt resource value: 0x7f050003
 			public const int completedWorktime = 2131034115;
 			
-			// aapt resource value: 0x7f050012
-			public const int contentFrame = 2131034130;
+			// aapt resource value: 0x7f050018
+			public const int contentFrame = 2131034136;
 			
 			// aapt resource value: 0x7f050007
 			public const int errorOk = 2131034119;
@@ -148,11 +148,29 @@ namespace MobileRcp.Droid
 			// aapt resource value: 0x7f050001
 			public const int textView1 = 2131034113;
 			
+			// aapt resource value: 0x7f050011
+			public const int textViewLeaveRemainingDescription = 2131034129;
+			
+			// aapt resource value: 0x7f050014
+			public const int wokrtimeItemAdditionals = 2131034132;
+			
+			// aapt resource value: 0x7f050012
+			public const int wokrtimeItemDay = 2131034130;
+			
+			// aapt resource value: 0x7f050013
+			public const int wokrtimeItemIn = 2131034131;
+			
+			// aapt resource value: 0x7f050015
+			public const int wokrtimeItemOut = 2131034133;
+			
+			// aapt resource value: 0x7f050016
+			public const int wokrtimeItemTime = 2131034134;
+			
 			// aapt resource value: 0x7f050010
 			public const int worktimePager = 2131034128;
 			
-			// aapt resource value: 0x7f050011
-			public const int worktimesList = 2131034129;
+			// aapt resource value: 0x7f050017
+			public const int worktimesList = 2131034135;
 			
 			static Id()
 			{
@@ -183,13 +201,16 @@ namespace MobileRcp.Droid
 			public const int WorktimeStats = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int WorktimeStatsMonth = 2130903045;
+			public const int WorktimeStatsItem = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int zxingscanneractivitylayout = 2130903046;
+			public const int WorktimeStatsMonth = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int zxingscannerfragmentlayout = 2130903047;
+			public const int zxingscanneractivitylayout = 2130903047;
+			
+			// aapt resource value: 0x7f030008
+			public const int zxingscannerfragmentlayout = 2130903048;
 			
 			static Layout()
 			{

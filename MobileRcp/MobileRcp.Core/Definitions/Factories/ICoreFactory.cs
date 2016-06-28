@@ -12,5 +12,6 @@ namespace MobileRcp.Core.Definitions.Factories
         IAuthorizationService GetAuthorizationService();
         IUserStatsService GetUserStatsService();
         ICoreNavigationService GetCoreNavigationService();
+        IConvertersFactory GetConvertersFactory();
     }
 }

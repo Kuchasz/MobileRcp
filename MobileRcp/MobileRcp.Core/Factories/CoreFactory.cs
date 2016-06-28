@@ -14,6 +14,7 @@ namespace MobileRcp.Core.Factories
         private readonly ICoreNavigationService _platformSpecificNavigation;
         private IAuthorizationService _authorizationService;
         private IUserStatsService _userStatsService;
+        private IConvertersFactory _convertersFactory;
 
         public CoreFactory(ICoreNavigationService platformSpecificNavigation)
         {
@@ -33,6 +34,11 @@ namespace MobileRcp.Core.Factories
         public ICoreNavigationService GetCoreNavigationService()
         {
             return _platformSpecificNavigation;
+        }
+
+        public IConvertersFactory GetConvertersFactory()
+        {
+            return _convertersFactory ?? (_convertersFactory = new ConvertersFactory());
         }
     }
 }

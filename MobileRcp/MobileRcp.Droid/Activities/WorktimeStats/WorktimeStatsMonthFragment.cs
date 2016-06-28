@@ -1,15 +1,11 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-
-using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using MobileRcp.Core.Models;
+using GalaSoft.MvvmLight.Helpers;
 using MobileRcp.Core.ViewModels;
 using Fragment = Android.Support.V4.App.Fragment;
 using ListFragment = Android.Support.V4.App.ListFragment;
@@ -31,7 +27,7 @@ namespace MobileRcp.Droid.Activities.WorktimeStats
             
             var list = view.FindViewById<ListView>(Resource.Id.worktimesList);
             
-            list.Adapter = new ArrayAdapter<string>(Activity, Android.Resource.Layout.SimpleListItem1, _viewModel.Worktimes.Select(n => n.NormalIn.ToString()).ToList());
+            list.Adapter = new WorktimeAdapter(Activity, _viewModel.Worktimes);            
 
             return view;
         }

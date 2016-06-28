@@ -94,6 +94,7 @@
     <Compile Include="Activities\LeaveStatsActivity.cs" />
     <Compile Include="Activities\QrCodeGetterActivity.cs" />
     <Compile Include="Activities\SelectAuthorizationTypeActivity.cs" />
+    <Compile Include="Activities\WorktimeStats\WorktimeAdapter.cs" />
     <Compile Include="Activities\WorktimeStats\WorktimeStatsActivity.cs" />
     <Compile Include="Activities\WorktimeStats\WorktimeStatsMonthFragment.cs" />
     <Compile Include="Activities\WorktimeStats\WorktimeStatsMonthFragmentAdapter.cs" />
@@ -122,6 +123,9 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\WorktimeStatsMonth.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\WorktimeStatsItem.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>

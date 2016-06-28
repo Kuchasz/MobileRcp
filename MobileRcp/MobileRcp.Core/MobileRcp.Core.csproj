@@ -38,12 +38,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseTypes\ViewModelWithParameter.cs" />
+    <Compile Include="Converters\UserWorktimeToDisplayConverter.cs" />
+    <Compile Include="Definitions\Converters\IValueConverter.cs" />
+    <Compile Include="Definitions\Factories\IConvertersFactory.cs" />
     <Compile Include="Definitions\Factories\ICoreFactory.cs" />
     <Compile Include="Definitions\Factories\IViewModelsFactory.cs" />
     <Compile Include="Definitions\Services\IAuthorizationService.cs" />
     <Compile Include="Definitions\Services\ICoreNavigationService.cs" />
     <Compile Include="Definitions\Services\IUserStatsService.cs" />
     <Compile Include="Exceptions\AuthorizationException.cs" />
+    <Compile Include="Factories\ConvertersFactory.cs" />
     <Compile Include="Factories\CoreFactory.cs" />
     <Compile Include="Factories\ViewModelsFactory.cs" />
     <Compile Include="Models\AuthorizedModel.cs" />
@@ -52,6 +56,7 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserAuthorizationData.cs" />
     <Compile Include="Models\UserWorktime.cs" />
+    <Compile Include="Models\UserWorktimeToDisplay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DummyAuthorizationService.cs" />
     <Compile Include="Services\DummyUserStatsService.cs" />

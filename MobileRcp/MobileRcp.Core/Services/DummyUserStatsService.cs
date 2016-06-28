@@ -12,21 +12,17 @@ namespace MobileRcp.Core.Services
     {
         public IEnumerable<UserWorktime> GetUserWorktimes(int userId, DateTime startDate, DateTime endDate)
         {
-            return new[]
+            startDate = startDate.AddDays(-(startDate.Day - 1));
+
+            for (int i = 0; i < 30; i++)
             {
-                new UserWorktime()
+                yield return new UserWorktime()
                 {
                     UserId = 1,
-                    NormalIn = startDate,
-                    NormalOut = startDate.AddHours(8)
-                },
-                new UserWorktime()
-                {
-                    UserId = 1,
-                    NormalIn = startDate.AddDays(1),
-                    NormalOut = startDate.AddDays(1).AddHours(8)
-                },
-            };
+                    NormalIn = startDate.AddDays(i),
+                    NormalOut = startDate.AddDays(i).AddHours(8)
+                };
+            }
         }
     }
 }
