@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Text;
 using Android.Content;
 using Android.OS;
@@ -26,7 +27,9 @@ namespace MobileRcp.Droid.Activities.WorktimeStats
             var view = inflater.Inflate(Resource.Layout.WorktimeStatsMonth, container, false);
             
             var list = view.FindViewById<ListView>(Resource.Id.worktimesList);
-            
+            view.FindViewById<TextView>(Resource.Id.worktimeMonth).Text = _viewModel.Date.ToString("MMMM", new CultureInfo("pl-PL"));
+            view.FindViewById<TextView>(Resource.Id.worktimeTotal);
+
             list.Adapter = new WorktimeAdapter(Activity, _viewModel.Worktimes);            
 
             return view;
