@@ -25,11 +25,13 @@ namespace MobileRcp.Droid.Activities.WorktimeStats
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = inflater.Inflate(Resource.Layout.WorktimeStatsMonth, container, false);
-            
-            var list = view.FindViewById<ListView>(Resource.Id.worktimesList);
-            view.FindViewById<TextView>(Resource.Id.worktimeMonth).Text = _viewModel.Date.ToString("MMMM", new CultureInfo("pl-PL"));
-            view.FindViewById<TextView>(Resource.Id.worktimeTotal);
 
+            var list = view.FindViewById<ListView>(Resource.Id.worktimesList);
+            view.FindViewById<TextView>(Resource.Id.worktimeMonth).Text = _viewModel.Month;
+            view.FindViewById<TextView>(Resource.Id.worktimeTotal).Text = _viewModel.TotalWorktime;
+            view.FindViewById<TextView>(Resource.Id.worktimeExpectedTotal).Text = _viewModel.TotalExpectedWorktime;
+
+            
             list.Adapter = new WorktimeAdapter(Activity, _viewModel.Worktimes);            
 
             return view;

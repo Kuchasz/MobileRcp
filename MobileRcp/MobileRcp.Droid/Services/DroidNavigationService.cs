@@ -13,6 +13,7 @@ using GalaSoft.MvvmLight.Views;
 using MobileRcp.Core.Definitions.Services;
 using MobileRcp.Core.Models;
 using MobileRcp.Droid.Activities;
+using MobileRcp.Droid.Activities.WorktimeStats;
 
 namespace MobileRcp.Droid.Services
 {
@@ -25,6 +26,7 @@ namespace MobileRcp.Droid.Services
         private const string ErrorScreenKey = "errorScreenKey";
         private const string QrCodeGetterKey = "qrCodeGetterKey";
         private const string AuthorizationCompletedKey = "AuthorizationCompletedKey";
+        private const string WorktimeStatsKey = "WorktimeStatsKey";
 
         public DroidNavigationService()
         {
@@ -39,6 +41,7 @@ namespace MobileRcp.Droid.Services
             _navigationService.Configure(ErrorScreenKey, typeof(ErrorScreenActivity));
             _navigationService.Configure(QrCodeGetterKey, typeof(QrCodeGetterActivity));
             _navigationService.Configure(AuthorizationCompletedKey, typeof(AuthorizationCompletedActivity));
+            _navigationService.Configure(WorktimeStatsKey, typeof(WorktimeStatsActivity));
         }
 
 
@@ -64,7 +67,7 @@ namespace MobileRcp.Droid.Services
 
         public void GoToWorktimeStats(AuthorizedModel authorizedModel)
         {
-            throw new NotImplementedException();
+            _navigationService.NavigateTo(WorktimeStatsKey, authorizedModel);
         }
 
         public void GoToLeaveStats(AuthorizedModel authorizedModel)

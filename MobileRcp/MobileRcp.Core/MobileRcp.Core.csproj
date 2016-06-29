@@ -47,6 +47,7 @@
     <Compile Include="Definitions\Services\ICoreNavigationService.cs" />
     <Compile Include="Definitions\Services\IUserStatsService.cs" />
     <Compile Include="Exceptions\AuthorizationException.cs" />
+    <Compile Include="Extensions\FirstLetterToUpperExtensionMethod.cs" />
     <Compile Include="Factories\ConvertersFactory.cs" />
     <Compile Include="Factories\CoreFactory.cs" />
     <Compile Include="Factories\ViewModelsFactory.cs" />

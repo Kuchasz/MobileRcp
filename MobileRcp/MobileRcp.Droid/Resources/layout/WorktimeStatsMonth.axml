@@ -18,9 +18,28 @@
                 android:textStyle="bold"
                 android:textSize="20dp" />
             <TextView
-                android:text="Text"
+                android:text="Czas pracy:"
                 android:layout_column="1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginRight="5dp"
+                android:gravity="right" />
+            <TextView
+                android:text=""
                 android:id="@+id/worktimeTotal"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="right" />
+            <TextView
+                android:text="z"
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textStyle="bold"
+                android:gravity="right" />
+            <TextView
+                android:text=""
+                android:id="@+id/worktimeExpectedTotal"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:gravity="right" />

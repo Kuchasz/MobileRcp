@@ -130,8 +130,8 @@ namespace MobileRcp.Droid
 			// aapt resource value: 0x7f050003
 			public const int completedWorktime = 2131034115;
 			
-			// aapt resource value: 0x7f05001a
-			public const int contentFrame = 2131034138;
+			// aapt resource value: 0x7f05001b
+			public const int contentFrame = 2131034139;
 			
 			// aapt resource value: 0x7f050007
 			public const int errorOk = 2131034119;
@@ -166,6 +166,9 @@ namespace MobileRcp.Droid
 			// aapt resource value: 0x7f050016
 			public const int wokrtimeItemTime = 2131034134;
 			
+			// aapt resource value: 0x7f050019
+			public const int worktimeExpectedTotal = 2131034137;
+			
 			// aapt resource value: 0x7f050017
 			public const int worktimeMonth = 2131034135;
 			
@@ -175,8 +178,8 @@ namespace MobileRcp.Droid
 			// aapt resource value: 0x7f050018
 			public const int worktimeTotal = 2131034136;
 			
-			// aapt resource value: 0x7f050019
-			public const int worktimesList = 2131034137;
+			// aapt resource value: 0x7f05001a
+			public const int worktimesList = 2131034138;
 			
 			static Id()
 			{

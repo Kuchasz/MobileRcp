@@ -24,5 +24,15 @@ namespace MobileRcp.Core.Services
                 };
             }
         }
+
+        public TimeSpan GetUserTotalWorktime(int userId, DateTime startDate, DateTime endDate)
+        {
+            return new TimeSpan(78,0,0);
+        }
+
+        public TimeSpan GetUserExpectedTotalWorktime(int userId, DateTime startDate, DateTime endData)
+        {
+            return new TimeSpan(80,0,0);
+        }
     }
 }

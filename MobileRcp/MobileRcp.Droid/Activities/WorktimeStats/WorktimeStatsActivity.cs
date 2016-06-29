@@ -12,7 +12,7 @@ using FragmentManager = Android.Support.V4.App.FragmentManager;
 
 namespace MobileRcp.Droid.Activities.WorktimeStats
 {
-    [Activity(Label = "WorktimeStatsActivity", MainLauncher = true)]
+    [Activity(Label = "WorktimeStatsActivity")]
     public class WorktimeStatsActivity : DroidFragmentActivity
     {
         private ViewPager _viewPager;
