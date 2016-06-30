@@ -68,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\UserWorktimeToDisplayConverterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AuthorizationCompletedViewModelTests.cs" />
     <Compile Include="ViewModels\ErrorScreenViewModelTests.cs" />
