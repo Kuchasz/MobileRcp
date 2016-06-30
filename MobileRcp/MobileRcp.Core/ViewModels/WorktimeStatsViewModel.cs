@@ -17,63 +17,35 @@ namespace MobileRcp.Core.ViewModels
     public class WorktimeStatsViewModel : ViewModelWithParameter<AuthorizedModel>
     {
         private readonly ICoreFactory _coreFactory;
-        private IUserStatsService _userStatsService;
-        private IValueConverter<IEnumerable<UserWorktime>, IEnumerable<UserWorktimeToDisplay>> _worktimeConverter;
-
-        private DateTime _date;
-        public DateTime Date
+        private ObservableCollection<WorktimeStatsMonthViewModel> _worktimeMonths;
+        public ObservableCollection<WorktimeStatsMonthViewModel> WorktimeMonths
         {
-            get { return _date; }
-            set
-            {
-                Set(() => Date, ref _date, value);
-                GetDataForMonth();
-            }
+            get { return _worktimeMonths; }
+            set { Set(() => WorktimeMonths, ref _worktimeMonths, value); }
         }
 
-        public string Month => GetMonthNameFromDate();
-        public string TotalWorktime => GetTotalWorktime();
-        public string TotalExpectedWorktime => GetTotalExpectedWorktime();
-
-        private ObservableCollection<UserWorktimeToDisplay> _worktimes;
-        private TimeSpan _userTotalWorktime;
-        private TimeSpan _userExpectedTotalWorktime;
-
-        public ObservableCollection<UserWorktimeToDisplay> Worktimes
-        {
-            get { return _worktimes; }
-            set { Set(() => Worktimes, ref _worktimes, value); }
-        }
 
         public WorktimeStatsViewModel(ICoreFactory coreFactory) : base(coreFactory)
         {
             _coreFactory = coreFactory;
-            _userStatsService = _coreFactory.GetUserStatsService();
-            _worktimeConverter = _coreFactory.GetConvertersFactory().GetWorktimeToDisplayConverter();
+
+            InitializeWorktimeMonths(DateTime.Now, 3);
         }
 
-        private void GetDataForMonth()
+        private void InitializeWorktimeMonths(DateTime startDate, int howMany)
         {
-            var worktimes = _userStatsService.GetUserWorktimes(ViewModelParameter.AuthorizationData.UserIdent, Date, Date.AddDays(DateTime.DaysInMonth(Date.Year, Date.Month)));
-            Worktimes = new ObservableCollection<UserWorktimeToDisplay>(_worktimeConverter.Convert(worktimes).OrderByDescending(n => n.Day));
+            WorktimeMonths = new ObservableCollection<WorktimeStatsMonthViewModel>();
 
-            _userTotalWorktime = _userStatsService.GetUserTotalWorktime(ViewModelParameter.AuthorizationData.UserIdent, Date, Date.AddDays(DateTime.DaysInMonth(Date.Year, Date.Month)));
-            _userExpectedTotalWorktime = _userStatsService.GetUserExpectedTotalWorktime(ViewModelParameter.AuthorizationData.UserIdent, Date, Date.AddDays(DateTime.DaysInMonth(Date.Year, Date.Month)));
-        }
+            for (int i = 0; i < howMany; i++)
+            {
+                var viewModel = new WorktimeStatsMonthViewModel(_coreFactory)
+                {
+                    Date = startDate.AddMonths(-i),
+                    UserIdent = ViewModelParameter.AuthorizationData.UserIdent
+                };
 
-        private string GetMonthNameFromDate()
-        {
-            return Date.ToString("MMMM", new CultureInfo("pl-PL")).FirstLetterToUpper();
-        }
-
-        private string GetTotalWorktime()
-        {
-            return $"{_userTotalWorktime.TotalHours.ToString("####")}:{_userTotalWorktime.Minutes.ToString("00.##")}";
-        }
-
-        private string GetTotalExpectedWorktime()
-        {
-            return $"{_userExpectedTotalWorktime.TotalHours.ToString("####")}:{_userExpectedTotalWorktime.Minutes.ToString("00.##")}";
+                WorktimeMonths.Add(viewModel);
+            }
         }
     }
 }

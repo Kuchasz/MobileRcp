@@ -24,7 +24,7 @@ namespace MobileRcp.Droid.Activities.WorktimeStats
             SetContentView(Resource.Layout.WorktimeStats);
 
             _viewPager = FindViewById<ViewPager>(Resource.Id.worktimePager);
-            _viewPager.Adapter = new WorktimeStatsMonthFragmentAdapter(SupportFragmentManager, Factory);
+            _viewPager.Adapter = new WorktimeStatsMonthFragmentAdapter(SupportFragmentManager, Factory.GetWorktimeStatsViewModel());
         }
     }
 }

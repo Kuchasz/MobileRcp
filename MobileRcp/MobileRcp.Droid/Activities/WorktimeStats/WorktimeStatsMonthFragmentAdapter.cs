@@ -19,25 +19,22 @@ namespace MobileRcp.Droid.Activities.WorktimeStats
 {
     public class WorktimeStatsMonthFragmentAdapter : FragmentPagerAdapter
     {
+        private readonly WorktimeStatsViewModel _viewModel;
         private readonly IViewModelsFactory _factory;
 
         public WorktimeStatsMonthFragmentAdapter(IntPtr javaReference, JniHandleOwnership transfer) 
             : base(javaReference, transfer) {}
 
-        public WorktimeStatsMonthFragmentAdapter(FragmentManager fm, IViewModelsFactory factory) : base(fm)
+        public WorktimeStatsMonthFragmentAdapter(FragmentManager fm, WorktimeStatsViewModel viewModel) : base(fm)
         {
-            _factory = factory;
+            _viewModel = viewModel;
         }
 
-        public override int Count => 3;
+        public override int Count => _viewModel.WorktimeMonths.Count;
 
         public override Fragment GetItem(int position)
         {
-            var viewModel = _factory.GetWorktimeStatsViewModel();
-
-            viewModel.Date = DateTime.Now.AddMonths(-position);
-
-            return new WorktimeStatsMonthFragment(viewModel);
+            return new WorktimeStatsMonthFragment(_viewModel.WorktimeMonths[position]);
         }
     }
 }

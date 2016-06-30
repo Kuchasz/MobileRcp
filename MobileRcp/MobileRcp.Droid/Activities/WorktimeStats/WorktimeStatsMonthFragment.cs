@@ -15,9 +15,9 @@ namespace MobileRcp.Droid.Activities.WorktimeStats
 {
     public class WorktimeStatsMonthFragment : Fragment
     {
-        private readonly WorktimeStatsViewModel _viewModel;
+        private readonly WorktimeStatsMonthViewModel _viewModel;
 
-        public WorktimeStatsMonthFragment(WorktimeStatsViewModel viewModel)
+        public WorktimeStatsMonthFragment(WorktimeStatsMonthViewModel viewModel)
         {
             _viewModel = viewModel;
         }

@@ -66,6 +66,7 @@
     <Compile Include="ViewModels\LeaveStatsViewModel.cs" />
     <Compile Include="ViewModels\QrCodeGetterViewModel.cs" />
     <Compile Include="ViewModels\SelectAuthorizationTypeViewModel.cs" />
+    <Compile Include="ViewModels\WorktimeStatsMonthViewModel.cs" />
     <Compile Include="ViewModels\WorktimeStatsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
