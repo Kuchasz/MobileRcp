@@ -2,7 +2,7 @@
 
 ### To-Do 30-06-2016
 
- - Fix error in worktime viewmodel - navigation parameter is null
+ - ~~Fix error in worktime viewmodel - navigation parameter is null~~
 
 ### To-Do 29-06-2016
 
