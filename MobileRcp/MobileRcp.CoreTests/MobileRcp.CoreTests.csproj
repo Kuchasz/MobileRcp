@@ -74,6 +74,7 @@
     <Compile Include="ViewModels\ErrorScreenViewModelTests.cs" />
     <Compile Include="ViewModels\QrCodeGetterViewModelTests.cs" />
     <Compile Include="ViewModels\SelectAuthorizationTypeViewModelTests.cs" />
+    <Compile Include="ViewModels\WorktimeStatsViewModelTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
