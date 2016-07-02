@@ -51,5 +51,18 @@ namespace MobileRcp.CoreTests.ViewModels
                 Assert.AreEqual(DateTime.Now.AddMonths(-i).ToShortDateString(), model.WorktimeMonths[i].Date.ToShortDateString());
             }
         }
+
+        [Test]
+        public void ShouldGoToAuthorizationCompletedWhenGoBackCommandInvoked()
+        {
+            var model = new WorktimeStatsViewModel(CoreFactory);
+
+            model.GoBackCommand.Execute(null);
+
+            CoreFactory.
+                GetCoreNavigationService().
+                Received().
+                GoToAuthorizationCompleted(Arg.Any<AuthorizedModel>());
+        }
     }
 }

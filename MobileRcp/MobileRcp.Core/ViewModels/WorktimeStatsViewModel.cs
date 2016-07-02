@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GalaSoft.MvvmLight.Command;
 using MobileRcp.Core.BaseTypes;
 using MobileRcp.Core.Definitions.Converters;
 using MobileRcp.Core.Definitions.Factories;
@@ -25,11 +26,22 @@ namespace MobileRcp.Core.ViewModels
         }
 
 
+        public RelayCommand GoBackCommand { get; private set; }
+
         public WorktimeStatsViewModel(ICoreFactory coreFactory) : base(coreFactory)
         {
             _coreFactory = coreFactory;
 
+            GoBackCommand = new RelayCommand(GoBack);
+
             InitializeWorktimeMonths(DateTime.Now, 3);
+        }
+
+        private void GoBack()
+        {
+            _coreFactory.
+                GetCoreNavigationService().
+                GoToAuthorizationCompleted(ViewModelParameter);
         }
 
         private void InitializeWorktimeMonths(DateTime startDate, int howMany)

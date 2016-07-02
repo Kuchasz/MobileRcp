@@ -4,6 +4,7 @@
 
  - Add leaves view model
  - Add leaves activity 
+ - Add end authorization button to stats activities
 
 ### To-Do 01-07-2016
 
