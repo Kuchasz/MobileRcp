@@ -59,7 +59,7 @@ namespace MobileRcp.Core.ViewModels
         private void GetDataForMonth()
         {
             var worktimes = _userStatsService.GetUserWorktimes(UserIdent, Date, Date.AddDays(DateTime.DaysInMonth(Date.Year, Date.Month)));
-            Worktimes = new ObservableCollection<UserWorktimeToDisplay>(_worktimeConverter.Convert(worktimes).OrderByDescending(n => n.Day));
+            Worktimes = new ObservableCollection<UserWorktimeToDisplay>(_worktimeConverter.Convert(worktimes).OrderByDescending(n => Convert.ToInt32(n.Day)));
 
             _userTotalWorktime = _userStatsService.GetUserTotalWorktime(UserIdent, Date, Date.AddDays(DateTime.DaysInMonth(Date.Year, Date.Month)));
             _userExpectedTotalWorktime = _userStatsService.GetUserExpectedTotalWorktime(UserIdent, Date, Date.AddDays(DateTime.DaysInMonth(Date.Year, Date.Month)));
