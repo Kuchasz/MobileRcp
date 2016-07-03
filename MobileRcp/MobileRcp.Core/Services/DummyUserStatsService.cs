@@ -34,5 +34,31 @@ namespace MobileRcp.Core.Services
         {
             return new TimeSpan(80,0,0);
         }
+
+        public int GetUserLeavesLeft(int userId)
+        {
+            return 21;
+        }
+
+        public IEnumerable<LeaveCard> GetUserLeavesCards(int userId)
+        {
+            return new[]
+            {
+                new LeaveCard()
+                {
+                    Type = LeaveType.Normal,
+                    StartDate = DateTime.Now.AddDays(8),
+                    EndDate = DateTime.Now.AddDays(16),
+                    IsAccepted = true
+                }, 
+                new LeaveCard()
+                {
+                    Type = LeaveType.Normal,
+                    StartDate = DateTime.Now.AddDays(30),
+                    EndDate = DateTime.Now.AddDays(31),
+                    IsAccepted = false
+                }, 
+            };
+        }
     }
 }

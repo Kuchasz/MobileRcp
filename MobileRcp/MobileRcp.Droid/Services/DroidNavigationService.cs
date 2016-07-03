@@ -27,6 +27,7 @@ namespace MobileRcp.Droid.Services
         private const string QrCodeGetterKey = "qrCodeGetterKey";
         private const string AuthorizationCompletedKey = "AuthorizationCompletedKey";
         private const string WorktimeStatsKey = "WorktimeStatsKey";
+        private const string LeavesStatsKey = "LeavesStatsKey";
 
         public DroidNavigationService()
         {
@@ -42,6 +43,7 @@ namespace MobileRcp.Droid.Services
             _navigationService.Configure(QrCodeGetterKey, typeof(QrCodeGetterActivity));
             _navigationService.Configure(AuthorizationCompletedKey, typeof(AuthorizationCompletedActivity));
             _navigationService.Configure(WorktimeStatsKey, typeof(WorktimeStatsActivity));
+            _navigationService.Configure(LeavesStatsKey, typeof(LeaveStatsActivity));
         }
 
 
@@ -72,7 +74,7 @@ namespace MobileRcp.Droid.Services
 
         public void GoToLeaveStats(AuthorizedModel authorizedModel)
         {
-            throw new NotImplementedException();
+            _navigationService.NavigateTo(LeavesStatsKey, authorizedModel);
         }
 
         public TParameter GetNavigationParameter<TParameter>()

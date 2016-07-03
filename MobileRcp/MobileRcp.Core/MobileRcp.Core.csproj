@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseTypes\ViewModelWithParameter.cs" />
+    <Compile Include="Converters\LeaveCardToDisplayConverter.cs" />
     <Compile Include="Converters\UserWorktimeToDisplayConverter.cs" />
     <Compile Include="Definitions\Converters\IValueConverter.cs" />
     <Compile Include="Definitions\Factories\IConvertersFactory.cs" />
@@ -54,6 +55,9 @@
     <Compile Include="Models\AuthorizedModel.cs" />
     <Compile Include="Models\EntryType.cs" />
     <Compile Include="Models\ErrorMessageModel.cs" />
+    <Compile Include="Models\LeaveCard.cs" />
+    <Compile Include="Models\LeaveCardToDisplay.cs" />
+    <Compile Include="Models\LeaveType.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserAuthorizationData.cs" />
     <Compile Include="Models\UserWorktime.cs" />

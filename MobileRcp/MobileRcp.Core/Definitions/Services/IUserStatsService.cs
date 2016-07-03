@@ -12,5 +12,7 @@ namespace MobileRcp.Core.Definitions.Services
         IEnumerable<UserWorktime> GetUserWorktimes(int userId, DateTime startDate, DateTime endDate);
         TimeSpan GetUserTotalWorktime(int userId, DateTime startDate, DateTime endDate);
         TimeSpan GetUserExpectedTotalWorktime(int userId, DateTime startDate, DateTime endData);
+        int GetUserLeavesLeft(int userId);
+        IEnumerable<LeaveCard> GetUserLeavesCards(int userId);
     }
 }

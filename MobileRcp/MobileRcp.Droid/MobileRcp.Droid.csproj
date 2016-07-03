@@ -92,6 +92,7 @@
     <Compile Include="Activities\AuthorizationCompletedActivity.cs" />
     <Compile Include="Activities\ErrorScreenActivity.cs" />
     <Compile Include="Activities\LeaveStatsActivity.cs" />
+    <Compile Include="Activities\LeaveStatsCardsAdapter.cs" />
     <Compile Include="Activities\QrCodeGetterActivity.cs" />
     <Compile Include="Activities\SelectAuthorizationTypeActivity.cs" />
     <Compile Include="Activities\WorktimeStats\WorktimeAdapter.cs" />
@@ -127,6 +128,12 @@
     </AndroidResource>
     <AndroidResource Include="Resources\layout\WorktimeStatsItem.axml">
       <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\LeaveStats.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\LeaveStatsCard.axml">
+      <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>

@@ -97,29 +97,41 @@ namespace MobileRcp.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050008
-			public const int MyButton = 2131034120;
+			// aapt resource value: 0x7f050013
+			public const int MyButton = 2131034131;
+			
+			// aapt resource value: 0x7f05001a
+			public const int authTypeCancel = 2131034138;
+			
+			// aapt resource value: 0x7f050015
+			public const int authTypeImage = 2131034133;
+			
+			// aapt resource value: 0x7f050016
+			public const int authTypeNormalIn = 2131034134;
+			
+			// aapt resource value: 0x7f050017
+			public const int authTypeNormalOut = 2131034135;
+			
+			// aapt resource value: 0x7f050014
+			public const int authTypeUsername = 2131034132;
+			
+			// aapt resource value: 0x7f050018
+			public const int authTypeWorkIn = 2131034136;
+			
+			// aapt resource value: 0x7f050019
+			public const int authTypeWorkOut = 2131034137;
+			
+			// aapt resource value: 0x7f050012
+			public const int cardAccepted = 2131034130;
+			
+			// aapt resource value: 0x7f050011
+			public const int cardDate = 2131034129;
+			
+			// aapt resource value: 0x7f050010
+			public const int cardDays = 2131034128;
 			
 			// aapt resource value: 0x7f05000f
-			public const int authTypeCancel = 2131034127;
-			
-			// aapt resource value: 0x7f05000a
-			public const int authTypeImage = 2131034122;
-			
-			// aapt resource value: 0x7f05000b
-			public const int authTypeNormalIn = 2131034123;
-			
-			// aapt resource value: 0x7f05000c
-			public const int authTypeNormalOut = 2131034124;
-			
-			// aapt resource value: 0x7f050009
-			public const int authTypeUsername = 2131034121;
-			
-			// aapt resource value: 0x7f05000d
-			public const int authTypeWorkIn = 2131034125;
-			
-			// aapt resource value: 0x7f05000e
-			public const int authTypeWorkOut = 2131034126;
+			public const int cardType = 2131034127;
 			
 			// aapt resource value: 0x7f050005
 			public const int completedEnd = 2131034117;
@@ -130,8 +142,8 @@ namespace MobileRcp.Droid
 			// aapt resource value: 0x7f050003
 			public const int completedWorktime = 2131034115;
 			
-			// aapt resource value: 0x7f05001c
-			public const int contentFrame = 2131034140;
+			// aapt resource value: 0x7f050027
+			public const int contentFrame = 2131034151;
 			
 			// aapt resource value: 0x7f050007
 			public const int errorOk = 2131034119;
@@ -145,44 +157,65 @@ namespace MobileRcp.Droid
 			// aapt resource value: 0x7f050000
 			public const int item_touch_helper_previous_elevation = 2131034112;
 			
+			// aapt resource value: 0x7f05000c
+			public const int leaveStatsGoBack = 2131034124;
+			
+			// aapt resource value: 0x7f05000b
+			public const int leavesStatsCards = 2131034123;
+			
+			// aapt resource value: 0x7f050009
+			public const int leavesStatsDaysLeft = 2131034121;
+			
+			// aapt resource value: 0x7f050008
+			public const int linearLayout1 = 2131034120;
+			
+			// aapt resource value: 0x7f05000d
+			public const int tableLayout1 = 2131034125;
+			
+			// aapt resource value: 0x7f05000e
+			public const int tableRow1 = 2131034126;
+			
 			// aapt resource value: 0x7f050001
 			public const int textView1 = 2131034113;
 			
-			// aapt resource value: 0x7f050012
-			public const int textViewLeaveRemainingDescription = 2131034130;
+			// aapt resource value: 0x7f05000a
+			public const int textView2 = 2131034122;
 			
-			// aapt resource value: 0x7f050015
-			public const int wokrtimeItemAdditionals = 2131034133;
+			// aapt resource value: 0x7f05001d
+			public const int textViewLeaveRemainingDescription = 2131034141;
 			
-			// aapt resource value: 0x7f050013
-			public const int wokrtimeItemDay = 2131034131;
+			// aapt resource value: 0x7f050020
+			public const int wokrtimeItemAdditionals = 2131034144;
 			
-			// aapt resource value: 0x7f050014
-			public const int wokrtimeItemIn = 2131034132;
+			// aapt resource value: 0x7f05001e
+			public const int wokrtimeItemDay = 2131034142;
 			
-			// aapt resource value: 0x7f050016
-			public const int wokrtimeItemOut = 2131034134;
+			// aapt resource value: 0x7f05001f
+			public const int wokrtimeItemIn = 2131034143;
 			
-			// aapt resource value: 0x7f050017
-			public const int wokrtimeItemTime = 2131034135;
+			// aapt resource value: 0x7f050021
+			public const int wokrtimeItemOut = 2131034145;
 			
-			// aapt resource value: 0x7f05001a
-			public const int worktimeExpectedTotal = 2131034138;
+			// aapt resource value: 0x7f050022
+			public const int wokrtimeItemTime = 2131034146;
 			
-			// aapt resource value: 0x7f050018
-			public const int worktimeMonth = 2131034136;
+			// aapt resource value: 0x7f050025
+			public const int worktimeExpectedTotal = 2131034149;
 			
-			// aapt resource value: 0x7f050010
-			public const int worktimePager = 2131034128;
-			
-			// aapt resource value: 0x7f050011
-			public const int worktimeStatsBackButton = 2131034129;
-			
-			// aapt resource value: 0x7f050019
-			public const int worktimeTotal = 2131034137;
+			// aapt resource value: 0x7f050023
+			public const int worktimeMonth = 2131034147;
 			
 			// aapt resource value: 0x7f05001b
-			public const int worktimesList = 2131034139;
+			public const int worktimePager = 2131034139;
+			
+			// aapt resource value: 0x7f05001c
+			public const int worktimeStatsBackButton = 2131034140;
+			
+			// aapt resource value: 0x7f050024
+			public const int worktimeTotal = 2131034148;
+			
+			// aapt resource value: 0x7f050026
+			public const int worktimesList = 2131034150;
 			
 			static Id()
 			{
@@ -204,25 +237,31 @@ namespace MobileRcp.Droid
 			public const int ErrorScreen = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int Main = 2130903042;
+			public const int LeaveStats = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int SelectAuthorizationType = 2130903043;
+			public const int LeaveStatsCard = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int WorktimeStats = 2130903044;
+			public const int Main = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int WorktimeStatsItem = 2130903045;
+			public const int SelectAuthorizationType = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int WorktimeStatsMonth = 2130903046;
+			public const int WorktimeStats = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int zxingscanneractivitylayout = 2130903047;
+			public const int WorktimeStatsItem = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int zxingscannerfragmentlayout = 2130903048;
+			public const int WorktimeStatsMonth = 2130903048;
+			
+			// aapt resource value: 0x7f030009
+			public const int zxingscanneractivitylayout = 2130903049;
+			
+			// aapt resource value: 0x7f03000a
+			public const int zxingscannerfragmentlayout = 2130903050;
 			
 			static Layout()
 			{

@@ -11,5 +11,6 @@ namespace MobileRcp.Core.Definitions.Factories
     public interface IConvertersFactory
     {
         IValueConverter<IEnumerable<UserWorktime>, IEnumerable<UserWorktimeToDisplay>> GetWorktimeToDisplayConverter();
+        IValueConverter<IEnumerable<LeaveCard>, IEnumerable<LeaveCardToDisplay>> GetLeaveCardConverter();
     }
 }

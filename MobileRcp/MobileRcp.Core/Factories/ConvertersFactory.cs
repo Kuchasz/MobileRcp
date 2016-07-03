@@ -16,5 +16,10 @@ namespace MobileRcp.Core.Factories
         {
             return new UserWorktimeToDisplayConverter();
         }
+
+        public IValueConverter<IEnumerable<LeaveCard>, IEnumerable<LeaveCardToDisplay>> GetLeaveCardConverter()
+        {
+            return new LeaveCardToDisplayConverter();
+        }
     }
 }
