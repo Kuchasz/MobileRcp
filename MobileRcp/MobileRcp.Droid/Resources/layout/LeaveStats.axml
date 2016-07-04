@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:weightSum="24"
-    android:paddingTop="10dp"
+    android:padding="10dp"
     android:layout_height="match_parent">
     <LinearLayout
         android:orientation="horizontal"
@@ -43,12 +43,14 @@
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/leavesStatsCards"
-        android:layout_weight="20"
+        android:layout_weight="22"
         android:layout_marginBottom="0.0dp" />
     <Button
         android:text="Powrót"
         android:layout_width="match_parent"
-        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:id="@+id/leaveStatsGoBack" />
 </LinearLayout>
