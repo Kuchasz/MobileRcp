@@ -47,10 +47,22 @@
         android:id="@+id/leavesStatsCards"
         android:layout_weight="22"
         android:layout_marginBottom="0.0dp" />
-    <Button
-        android:text="Powrót"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:id="@+id/leaveStatsGoBack" />
+        android:layout_width="match_parent">
+        <Button
+            android:text="Zakończ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/leaveStatsEndAuth" />
+        <Button
+            android:text="Powrót"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/leaveStatsGoBack" />
+    </LinearLayout>
 </LinearLayout>

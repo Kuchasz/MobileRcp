@@ -1,10 +1,15 @@
 # MobileRcp
 
+### To-Do 04-07-2016
+
+ - Add timers to end authorization buttons
+ - Add styles to UI (material design?)
+
 ### To-Do 02-07-2016
 
  - ~~Add leaves view model~~
  - ~~Add leaves activity~~
- - Add end authorization button to stats activities
+ - ~~Add end authorization button to stats activities~~
 
 ### To-Do 01-07-2016
 

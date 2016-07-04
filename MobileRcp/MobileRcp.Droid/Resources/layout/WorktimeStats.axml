@@ -11,10 +11,22 @@
         android:layout_width="match_parent"
         android:layout_weight="8"
         android:layout_height="match_parent" />
-    <Button
-        android:text="Powrót"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:id="@+id/worktimeStatsBackButton" />
+        android:layout_weight="1"
+        android:layout_width="match_parent">
+        <Button
+            android:text="Zakończ"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/worktimeStatsEndAuth" />
+        <Button
+            android:text="Powrót"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/worktimeStatsBackButton" />
+    </LinearLayout>
 </LinearLayout>

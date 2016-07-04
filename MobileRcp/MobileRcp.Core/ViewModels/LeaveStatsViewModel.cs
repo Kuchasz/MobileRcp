@@ -30,12 +30,14 @@ namespace MobileRcp.Core.ViewModels
         }
 
         public RelayCommand GoBackCommand { get; private set; }
+        public RelayCommand EndAuthorizationCommand { get; set; }
 
         public LeaveStatsViewModel(ICoreFactory coreFactory) : base(coreFactory)
         {
             _coreFactory = coreFactory;
 
             GoBackCommand = new RelayCommand(GoBack);
+            EndAuthorizationCommand = new RelayCommand(EndAuthorization);
 
             GetData();
         }
@@ -63,6 +65,13 @@ namespace MobileRcp.Core.ViewModels
             _coreFactory.
                 GetCoreNavigationService().
                 GoToAuthorizationCompleted(ViewModelParameter);
+        }
+
+        private void EndAuthorization()
+        {
+            _coreFactory.
+                GetCoreNavigationService().
+                GoToQrCodeGetter();
         }
     }
 }

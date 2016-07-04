@@ -31,6 +31,7 @@ namespace MobileRcp.Droid.Activities
             ViewModel = Factory.GetLeaveStatsViewModel();
 
             FindViewById<Button>(Resource.Id.leaveStatsGoBack).SetCommand(ViewModel.GoBackCommand);
+            FindViewById<Button>(Resource.Id.leaveStatsEndAuth).SetCommand(ViewModel.EndAuthorizationCommand);
 
             CardsList = FindViewById<ListView>(Resource.Id.leavesStatsCards);
 

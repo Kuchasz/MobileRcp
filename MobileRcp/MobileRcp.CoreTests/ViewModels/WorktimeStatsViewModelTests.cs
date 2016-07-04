@@ -64,5 +64,18 @@ namespace MobileRcp.CoreTests.ViewModels
                 Received().
                 GoToAuthorizationCompleted(Arg.Any<AuthorizedModel>());
         }
+
+        [Test]
+        public void ShouldEndAuthorization()
+        {
+            var viewModel = new WorktimeStatsViewModel(CoreFactory);
+
+            viewModel.EndAuthorizationCommand.Execute(null);
+
+            CoreFactory.
+                GetCoreNavigationService().
+                Received().
+                GoToQrCodeGetter();
+        }
     }
 }
