@@ -10,6 +10,8 @@ namespace MobileRcp.Core.Models
     public class ErrorMessageModel
     {
         public string ErrorMessage { get; set; }
+        //Review: Get rid of that action, it is better to extend NavigatorService with such ability:
+        //navigationService.Navigate(errPage, pageToNavigateAfterError)
         public Action PostNavigationAction { get; set; }
 
         public ErrorMessageModel()

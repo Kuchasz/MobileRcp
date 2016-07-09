@@ -17,6 +17,7 @@ using MobileRcp.Droid.Activities.WorktimeStats;
 
 namespace MobileRcp.Droid.Services
 {
+    //Review: I am not sure if creating such service is good practise. You will end up with godlike service with number of methods == number of activities
     public class DroidNavigationService : ICoreNavigationService
     {
         private readonly NavigationService _navigationService;

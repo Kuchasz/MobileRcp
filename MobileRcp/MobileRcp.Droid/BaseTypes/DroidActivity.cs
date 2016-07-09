@@ -18,6 +18,7 @@ namespace MobileRcp.Droid.BaseTypes
     //Or if it is android-related keep this class name and place that in Prabez.Mvvm.Activities.Android namespace and derivate from Activity<T>
     //I would create public abstract class Activity<T> : ActivityBase where T: GalaSoft.MvvmLight.ViewModelBase with ViewModel property of type T
     //private readonly int View field in constructor
+    //Prabez.Mvvm.Activities.Android -> AndroidActivity
     public abstract class DroidActivity : ActivityBase
     {
         public IViewModelsFactory Factory => App.GetViewModelsFactory(Intent);

@@ -12,6 +12,7 @@ namespace MobileRcp.Core.Models
         //Review: User is not a part of UserWorktime, User can exist without UserWorktime
         //Get rid of that identity, User should have IEnumerable<UserWorktime>
         //Creating references from Child to Parent can then cause very not effective DBMS queries by ORM framework. Do not let child reference its parent.
+        //UserId can be placed in DTOs, classical serializable POCOs that should be as 'flat' and simple objects as possible
         public int UserId { get; set; }
         public DateTime NormalIn { get; set; }
         public DateTime NormalOut { get; set; }

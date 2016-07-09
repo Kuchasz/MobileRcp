@@ -9,6 +9,8 @@ using MobileRcp.Core.Models;
 
 namespace MobileRcp.Core.Services
 {
+    //Review: Split domain-side user from auth-logic user
+    //Prabez.Security.Authorization.Services
     public class DummyAuthorizationService : IAuthorizationService
     {
         public User AuthorizeUser(string userQrToken)

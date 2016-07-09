@@ -33,7 +33,7 @@ namespace MobileRcp.Droid.Activities
             SetBinding();
         }
 
-        //this could be abstract method in Activity<T>
+        //this could be protected virtual method in Activity<T> and override in each activity (there could be activites that won't have any bindings)
         private void SetBinding()
         {
             FindViewById<Button>(Resource.Id.errorOk).SetCommand("Click", ViewModel.ExecutePostActionCommand);

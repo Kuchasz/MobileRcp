@@ -8,6 +8,7 @@ using MobileRcp.Core.Models;
 
 namespace MobileRcp.Core.Services
 {
+    //Review: Looks like fake-domain side service, Prabez.MobileRcp.Domain.User.Services
     public class DummyUserStatsService : IUserStatsService
     {
         public IEnumerable<UserWorktime> GetUserWorktimes(int userId, DateTime startDate, DateTime endDate)
