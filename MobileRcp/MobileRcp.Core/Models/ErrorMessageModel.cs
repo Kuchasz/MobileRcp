@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MobileRcp.Core.Models
 {
+    //Review: It's not domain object, its application related. Move that to Prabez.MobileRcp.Application.Common.Models
     public class ErrorMessageModel
     {
         public string ErrorMessage { get; set; }

@@ -10,6 +10,7 @@ using MobileRcp.Core.Models;
 
 namespace MobileRcp.Core.ViewModels
 {
+    //Review: I would place this class in Prabez.MobileRcp.Application.Common.ViewModels
     public class ErrorScreenViewModel : ViewModelWithParameter<ErrorMessageModel>
     {
         private readonly ICoreFactory _coreFactory;

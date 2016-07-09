@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using MobileRcp.Core.Models;
 
+//Review: Namespaces should start with author/company name, eg:
+//(Prabez|RPles|Ples).MobileRcp...
+//I would move that member into Prabez.Security.Authorization.Services
 namespace MobileRcp.Core.Definitions.Services
 {
     public interface IAuthorizationService

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MobileRcp.Core.Exceptions
 {
+    //Review: Move that to Prabez.Security.Authorization.Exceptions
     public class AuthorizationException : Exception
     {
         public AuthorizationException()

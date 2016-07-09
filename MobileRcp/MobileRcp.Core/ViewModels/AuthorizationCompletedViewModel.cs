@@ -10,6 +10,7 @@ using MobileRcp.Core.Models;
 
 namespace MobileRcp.Core.ViewModels
 {
+    //Review: I would place this class in Prabez.MobileRcp.Application.Authorization.ViewModels
     public class AuthorizationCompletedViewModel : ViewModelWithParameter<AuthorizedModel>
     {
         private readonly ICoreFactory _coreFactory;

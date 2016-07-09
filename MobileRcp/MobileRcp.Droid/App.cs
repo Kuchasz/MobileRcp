@@ -13,6 +13,7 @@ using MobileRcp.Core.Definitions.Factories;
 using MobileRcp.Core.Factories;
 using MobileRcp.Droid.Services;
 
+//Review: I would change that namespace to Prabez.MobileRcp.Droid or Prabez.MobileRcp.Client.Android
 namespace MobileRcp.Droid
 {
     [Application]

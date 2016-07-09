@@ -27,6 +27,7 @@ namespace MobileRcp.Core.Services
                 };
             }
 
+            //Review: Code-side exceptions should not be displayed to end-user, its just sugar do developers so write them in dev's main langue (English)
             throw new AuthorizationException("Nieprawidłowy kod QR pracownika.");
         }
 

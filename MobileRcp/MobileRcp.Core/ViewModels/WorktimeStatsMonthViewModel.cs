@@ -14,6 +14,7 @@ using MobileRcp.Core.Models;
 
 namespace MobileRcp.Core.ViewModels
 {
+    //Review: I would place this class in Prabez.MobileRcp.Application.User.ViewModels
     public class WorktimeStatsMonthViewModel : ViewModelBase
     {
         private readonly ICoreFactory _coreFactory;

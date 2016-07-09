@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace MobileRcp.Core.Models
 {
+    //Review: I don't know domain requirements but i think this class name is not enough obvious
+    //User should have reference to collection of LeaveCards
     public class LeaveCard
     {
         public LeaveType Type { get; set; }

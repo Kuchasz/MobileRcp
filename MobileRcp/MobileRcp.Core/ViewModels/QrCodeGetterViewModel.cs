@@ -11,6 +11,7 @@ using MobileRcp.Core.Models;
 
 namespace MobileRcp.Core.ViewModels
 {
+    //Review: Is this class name proper? I think it is more related to user authorization instead of QRCodes
     public class QrCodeGetterViewModel : ViewModelBase
     {
         private readonly ICoreFactory _coreFactory;

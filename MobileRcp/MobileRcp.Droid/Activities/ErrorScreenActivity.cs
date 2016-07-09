@@ -21,6 +21,7 @@ namespace MobileRcp.Droid.Activities
         public ErrorScreenViewModel ViewModel { get; set; }
         public TextView ErrorTextView { get; set; }
 
+        //Review: All this logic could be placed in Activity<T> or DroidActivity<T> class
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -32,7 +33,7 @@ namespace MobileRcp.Droid.Activities
             SetBinding();
         }
 
-        
+        //this could be abstract method in Activity<T>
         private void SetBinding()
         {
             FindViewById<Button>(Resource.Id.errorOk).SetCommand("Click", ViewModel.ExecutePostActionCommand);

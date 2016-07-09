@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Review: I would move that to Prabez.Core.Extensions.String
 namespace MobileRcp.Core.Extensions
 {
     public static class FirstLetterToUpperExtensionMethod

@@ -12,6 +12,7 @@ using MobileRcp.Core.Models;
 
 namespace MobileRcp.Core.ViewModels
 {
+    //Review: I would place this class in Prabez.MobileRcp.Application.Authorization.ViewModels
     public class SelectAuthorizationTypeViewModel : ViewModelWithParameter<User>
     {
         private readonly ICoreFactory _coreFactory;

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MobileRcp.Core.Models
 {
+    //Review: I would move that to Prabez.Security.Authorization.Models
     public class AuthorizedModel
     {
         public EntryType EntryType { get; set; }
